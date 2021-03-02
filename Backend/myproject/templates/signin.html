@@ -1,0 +1,38 @@
+<h1> this registartion
+</h1>
+<form method ='POST'>
+{% csrf_token %}
+<table border ="1">
+<tr>
+<td>User Name </td>
+<td><input type="text" placeholder="Enter Username" name="username" required></td></tr>
+<tr>
+<td>Email </td>
+<td><input type="text" placeholder="Enter Email" name="email" required></td></tr>
+<tr>
+<td>Password </td>
+<td><input type="text" placeholder="Enter Password" name="password1" required </td></tr>
+<tr>
+<td>Confirm Password </td>
+<td><input type="text" placeholder="Enter Password" name="password2" required </td></tr>
+<tr>
+ <input type="radio" id="role" name="Role" >
+  <label for="role1">Student</label><br>
+  <input type="radio" id="role2" name="role">
+  <label for="role2">Professor</label><br>  
+<td></td>
+<td>
+
+<form  method="post">
+{% csrf_token %}
+ <button onclick="location.href={% url 'signin'%}" type="submit" name='mybtn2' >Sign</button>
+ </form>
+ </td>
+</tr>
+</table>
+{% if messages %}
+{% for msg in messages%}
+{{msg}}
+{% endfor %}
+{% endif %}
+</form>

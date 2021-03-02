@@ -1,0 +1,43 @@
+<table class="table is-fullwidth is-striped is-bordered" border="1" >
+    <thead>
+    <tr>
+      
+        <th>StudentName</th>
+      
+        <th>coursename</th>
+      
+       
+    </tr>
+    </thead>
+    <tbody id='test'>
+      {% for data in registartion %}
+    <tr>
+        <th>{{ data.name }}</th>
+        <td>{{ data.name }}</td>
+      
+
+
+        <td><a href =""> Edit </a></td>
+        <td><a href =""> Delete </a></td>
+        <form action ="" method="POST">
+        <input type="button" value="delete">
+
+        </form>
+     {% endfor %}
+  
+       </tr>
+   
+    </tbody>
+</table>
+<h1>
+Welcome to E-Learning Portal
+</h1>
+<hr/>
+<a href ="{% url 'displayreg'  %}" action="{% url 'displayreg' %}" method="post"> Registration </a> &nbsp;&nbsp; | &nbsp;&nbsp;
+<a href =""> Login </a>
+
+
+
+
+
+

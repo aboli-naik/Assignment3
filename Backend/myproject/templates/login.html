@@ -1,0 +1,14 @@
+{% load rest_framework %}
+
+<html><body>
+{% for data in students %}
+<h1>Profile - {{ profile.name }}</h1>
+
+<form action="{% url 'profile-detail' pk=student.pk %}" method="POST">
+    {% csrf_token %}
+    {% render_form serializer %}
+    <input type="submit" value="Save">
+     {% endfor %}
+</form>
+
+</body></html>

@@ -1,0 +1,72 @@
+<table class="table is-fullwidth is-striped is-bordered" border="1" >
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>email</th>
+      <th>coursename</th>
+      <th>birthdate</th>  
+    </tr>
+    </thead>
+    <tbody id='test'>
+      {% for data in students %}
+    <tr>
+        <th>{{ data.name }}</th>
+        <td>{{ data.email }}</td>
+        <td>{{ data.coursename }}</td>
+        <td>{{ data.birthdate }}</td>
+        <td><a href =""> Edit </a></td>
+        <td><a href =""> Delete </a></td>
+        <form action ="" method="POST">
+        <input type="button" value="delete">
+
+        </form>
+     {% endfor %}
+  
+       </tr>
+   
+    </tbody>
+</table>
+<h1>
+Welcome to E-Learning Portal
+</h1>
+<hr/>
+
+<h2>
+Courses info
+</h2>
+<hr/>
+<table class="table is-fullwidth is-striped is-bordered" border="1" >
+    <thead>
+    <tr>
+     
+      <th>coursename</th>
+      <th>modules</th>  
+    </tr>
+    </thead>
+    <tbody id='test'>
+      {% for data in courses %}
+    <tr>
+        <th>{{ data.coursename }}</th>
+        <td>{{ data.modules }}</td>
+      
+        <td><a href =""> Edit </a></td>
+        <td><a href =""> Delete </a></td>
+        <form action ="" method="POST">
+        <input type="button" value="delete">
+
+        </form>
+     {% endfor %}
+  
+       </tr>
+   
+    </tbody>
+</table>
+
+<form action="{% url 'signin' %}" method="post">
+{% csrf_token %}
+ <button type="submit" name='mybtn2' >Sign</button>
+ </form>
+
+
+
+
